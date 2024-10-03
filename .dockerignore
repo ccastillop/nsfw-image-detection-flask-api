@@ -1,0 +1,22 @@
+# Exclude Git files and folders
+.git
+.gitignore
+
+# Python bytecode and cache directories
+__pycache__/
+*.py[cod]
+
+# Exclude environment files (e.g., .env)
+.env
+
+# Local virtual environments
+venv/
+env/
+
+# Ignore logs and other temp files
+*.log
+*.swp
+
+# Docker configuration files
+docker-compose.yml
+docker-compose.override.yml

@@ -1,0 +1,22 @@
+# Python-specific
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.env
+
+# Environment variables and sensitive data
+.env
+
+# Virtual environments
+venv/
+env/
+
+# Logs
+*.log
+
+# System-specific
+.DS_Store
+Thumbs.db
+
+# Docker-related
+docker-compose.override.yml
