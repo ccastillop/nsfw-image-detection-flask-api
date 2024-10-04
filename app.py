@@ -35,6 +35,23 @@ def predict():
     # Return the prediction as JSON
     return jsonify({"predicted_label": predicted_label})
 
+@app.route('/up', methods=['GET'])
+def up():
+  # Return a status 200 and a green page
+  html_content = '''
+  <html>
+      <head>
+          <style>
+              body { background-color: green; }
+          </style>
+      </head>
+      <body>
+          <h1>Status: Up</h1>
+      </body>
+  </html>
+  '''
+  return html_content, 200
+
 # Run the Flask app
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000)
