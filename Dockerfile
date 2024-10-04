@@ -1,21 +1,33 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9-slim
+# First stage for installing dependencies
+FROM python:3.9-slim as builder
 
-# Set the working directory in the container
+# Set working directory
 WORKDIR /app
 
-# Set production environment
+# Copy requirements file and install dependencies
+COPY requirements.txt .
+RUN python -m venv /opt/venv && \
+  . /opt/venv/bin/activate && \
+  pip install --no-cache-dir -r requirements.txt
+
+# Second stage for the application
+FROM python:3.9-slim
+
+# Set environment
 ENV FLASK_ENV=production
+WORKDIR /app
 
-# Install any needed packages specified in requirements.txt
-COPY requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Copy the installed dependencies from the first stage
+COPY --from=builder /opt/venv /opt/venv
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Ensure the virtual environment is enabled
+ENV PATH="/opt/venv/bin:$PATH"
 
-# Expose the port that the Flask app will run on
+# Copy application code
+COPY . .
+
+# Expose the app port
 EXPOSE 3000
 
-# Run app.py when the container launches
+# Run the application
 CMD ["python", "app.py"]
