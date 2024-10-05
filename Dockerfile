@@ -9,7 +9,8 @@ ENV FLASK_ENV=production
 
 # Install any needed packages specified in requirements.txt
 COPY requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt -f https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir torch --extra-index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the current directory contents into the container at /app
 COPY . /app

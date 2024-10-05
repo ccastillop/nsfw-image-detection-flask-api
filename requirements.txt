@@ -2,4 +2,4 @@ transformers
 Pillow
 tokenizers
 Flask
-torch==2.4.1
+torch
