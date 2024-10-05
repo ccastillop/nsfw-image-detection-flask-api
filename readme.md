@@ -39,15 +39,15 @@ To run the app, you will need:
 3. **Run the Docker container**:
 
    ```bash
-   docker run -p 3000:3000 nsfw-flask-app
+   docker run -p 3030:3030 nsfw-flask-app
    ```
 
-4. The app will be available at `http://localhost:3000`. You can now test the API using `curl` or Postman.
+4. The app will be available at `http://localhost:3030`. You can now test the API using `curl` or Postman.
 
    **Example using `curl`**:
 
    ```bash
-   curl -X POST -F 'image=@path_to_your_image.jpg' http://localhost:3000/predict
+   curl -X POST -F 'image=@path_to_your_image.jpg' http://localhost:3030/predict
    ```
 
    The API will return a JSON response like:
@@ -68,7 +68,7 @@ If you prefer using Docker Compose for easier container management:
    docker-compose up --build
    ```
 
-2. The app will be available at `http://localhost:3000`.
+2. The app will be available at `http://localhost:3030`.
 
 ### Running the App Locally (Without Docker)
 
@@ -86,12 +86,12 @@ If you want to run the app locally without Docker:
    python app.py
    ```
 
-3. The API will be available at `http://localhost:3000`.
+3. The API will be available at `http://localhost:3030`.
 
 4. Example with curl:
 
     ```bash
-    curl -X POST -F 'image=@images/test2.jpg' http://localhost:3000/predict
+    curl -X POST -F 'image=@images/test2.jpg' http://localhost:3030/predict
     ```
 
 ### API Endpoints

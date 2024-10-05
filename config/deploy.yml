@@ -20,7 +20,7 @@ proxy:
   ssl: true
   host: nsfw-detector.softwarebajodemanda.com
   # kamal-proxy connects to your container over port 80, use `app_port` to specify a different port.
-  app_port: 3000
+  app_port: 3030
 
 # Credentials for your image host.
 registry:
@@ -47,10 +47,15 @@ builder:
   remote: ssh://root@54.39.137.119
   arch: amd64
 
-env:
-  clear:
-    HTTP_PORT: 8080
-    HTTPS_PORT: 8083
+# env:
+#   clear:
+#     HTTP_PORT: 8081
+#     HTTPS_PORT: 8083
+#
+# Because the kamal-proxy can be used for many servers, it should be set by hand
+#     kamal proxy boot_config set --http-port 8081 --https-port 8083
+#
+#
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
 # "bin/kamal logs -r job" will tail logs from the first server in the job section.
 #
@@ -61,8 +66,8 @@ env:
 #
 # ssh:
 #   user: app
-ssh:
-  log_level: debug
+# ssh:
+#   log_level: debug
 
 # Use a persistent storage volume.
 #

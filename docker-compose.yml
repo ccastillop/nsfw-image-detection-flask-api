@@ -2,7 +2,7 @@ services:
   nsfw-flask-app:
     build: .
     ports:
-      - "3000:3000"
+      - "3030:3030"
     volumes:
       - .:/app
     environment:

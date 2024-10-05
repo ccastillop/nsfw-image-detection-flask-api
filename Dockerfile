@@ -27,7 +27,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 COPY . .
 
 # Expose the app port
-EXPOSE 3000
+EXPOSE 3030
 
 # Run the application
 CMD ["python", "app.py"]
