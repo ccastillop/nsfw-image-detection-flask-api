@@ -1,6 +1,6 @@
 # NSFW Image Detection Flask API
 
-This repository contains a Flask API that serves the Falconsai NSFW Image Detection model from Hugging Face.
+This repository contains a Flask API that serves the [Falconsai NSFW](https://huggingface.co/Falconsai/nsfw_image_detection) Image Detection model from Hugging Face.
 The API allows users to upload an image and get a classification of whether the image is "safe" or "nsfw."
 
 The app is Dockerized for easy setup and deployment.
